@@ -1,0 +1,32 @@
+<h2>Edit Article</h2>
+<%= form_for @article do|f|%>
+
+<div>
+	Class Name
+	<br>
+	<%=f.text_field :title %>
+</div>
+<div>
+	Teacher
+	<br>
+	<%=f.text_field :teacher %>
+</div>
+<div>
+	Place
+	<br>
+	<%=f.text_field :place %>
+</div>
+<div>
+	Time
+	<br>
+	<%=f.text_field :time %>
+</div>
+<div>
+	Degree
+	<br>
+	<%=f.text_field :degree %>
+</div>
+
+
+<%=f.submit%>
+<%end%>
