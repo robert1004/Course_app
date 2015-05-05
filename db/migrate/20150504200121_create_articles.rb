@@ -5,7 +5,7 @@ class CreateArticles < ActiveRecord::Migration
       t.string :teacher
       t.text :place
       t.text :time
-      t.number :degree
+      t.integer :degree
 
       t.timestamps null: false
     end

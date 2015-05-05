@@ -1,6 +1,21 @@
 class ArticlesController < ApplicationController
 	def index
-		@articles=Article.all		
+		@articles=Article.all
+		if params[ :title].present?
+		@articles = @articles.where("title like ?", "%#{params[ :title]}%")			
+		end	
+		if params[ :teacher].present?
+		@articles = @articles.where("teacher like ?", "%#{params[ :teacher]}%")			
+		end		
+		if params[ :place].present?
+		@articles = @articles.where("place like ?", "%#{params[ :place]}%")			
+		end
+		if params[ :time].present?
+		@articles = @articles.where("time like ?", "%#{params[ :time]}%")			
+		end
+		if params[ :degree].present?
+		@articles = @articles.where("degree like ?", "%#{params[ :degree]}%")			
+		end							
 	end
 	def show
 		@article=Article.find(params[ :id])
